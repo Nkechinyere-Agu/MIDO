@@ -6,3 +6,4 @@ The ontology developed can be found at: https://bioportal.bioontology.org/ontolo
 
 ## Knowledge Representation and Reasoning
 We use the chest ImaGenome data to instatiate out ontology, The data and the ruled used are available through valid credential access on Physionet.org
+We have a sample kg for a patient in kg. The patient information has been retracted, and we only leave the model output in the KG. as the patient information requires access to the dataset.

@@ -1,0 +1,65 @@
+@prefix RadLex: <radlex.org/RID/RadLex.owl/> .
+@prefix ddo: <http://purl.obolibrary.org/obo/DDO.owl#> .
+@prefix mido: <https://bioportal.bioontology.org/ontologies/MIDO/> .
+@prefix ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
+@prefix ogms: <http://purl.obolibrary.org/obo/OGMS_0000031/> .
+@prefix prov1: <https://www.w3.org/TR/prov-o/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ddo:demographic mido:hasID "12345"^^xsd:string .
+
+ogms:LaboratoryTest ddo:hasReport RadLex:Report .
+
+mido:abnormal prov1:value "Positive"^^xsd:string ;
+    prov1:wasAssociatedWith mido: .
+
+mido:atelectasis prov1:value "Positive"^^xsd:string ;
+    prov1:wasAssociatedWith mido: .
+
+mido:left_hilar_structures a mido:AnatomicalRegion .
+
+mido:left_lower_lung_zone a mido:AnatomicalRegion .
+
+mido:left_lung a mido:AnatomicalRegion .
+
+mido:left_mid_lung_zone a mido:AnatomicalRegion .
+
+mido:lung_opacity prov1:value "Positive"^^xsd:string ;
+    prov1:wasAssociatedWith mido: .
+
+mido:mediastinum a mido:AnatomicalRegion .
+
+mido:normal prov1:value "Positive"^^xsd:string ;
+    prov1:wasAssociatedWith mido: .
+
+mido:pulmonary_edema prov1:value "Positive"^^xsd:string ;
+    prov1:wasAssociatedWith mido: .
+
+mido:right_hilar_structures a mido:AnatomicalRegion .
+
+mido:right_lower_lung_zone a mido:AnatomicalRegion .
+
+mido:right_lung a mido:AnatomicalRegion .
+
+mido:upper_mediastinum a mido:AnatomicalRegion .
+
+RadLex:Report mido:hasFinding mido:abnormal,
+        mido:atelectasis,
+        mido:lung_opacity,
+        mido:normal,
+        mido:pulmonary_edema ;
+    mido:hasID "12345"^^xsd:string .
+
+"12345"^^xsd:string a ncit:Patient ;
+    ddo:hasDemographics ddo:demographic ;
+    ddo:hasLaboratoryTest ogms:LaboratoryTest ;
+    mido:hasAttribute mido:left_hilar_structures,
+        mido:left_lower_lung_zone,
+        mido:left_lung,
+        mido:left_mid_lung_zone,
+        mido:mediastinum,
+        mido:right_hilar_structures,
+        mido:right_lower_lung_zone,
+        mido:right_lung,
+        mido:upper_mediastinum .
+
